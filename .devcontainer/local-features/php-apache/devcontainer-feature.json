@@ -1,0 +1,21 @@
+{
+    "id": "php-apache",
+    "name": "Setup PHP + Apache",
+    "postCreateCommand": "sudo service apache2 start",
+    "version": "1.0.0",
+    "options": {
+        "installComposer": {
+            "type": "boolean",
+            "default": true,
+            "description": "Install PHP Composer?"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "xdebug.php-debug",
+				"bmewburn.vscode-intelephense-client"
+            ]
+        }
+    }  
+}
