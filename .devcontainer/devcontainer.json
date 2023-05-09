@@ -35,9 +35,6 @@
             "version": "7",
             "installUsingApt": "false"
 		},
-		"./local-features/php-apache": {
-			"installComposer": true
-		},
 		"ghcr.io/notSnuffy/Devcontainer-Features/php-apache:1": {},
     	"ghcr.io/notSnuffy/Devcontainer-Features/cpp:1": {},
     	"ghcr.io/notSnuffy/Devcontainer-Features/LaTex:1": {}
