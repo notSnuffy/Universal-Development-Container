@@ -20,8 +20,20 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set Lower Case Owner Name
+        run: |
+          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+        env:
+          OWNER: '${{ github.repository_owner }}'
+
+      - name: Set Lower Case Repo Name
+        run: |
+          echo "REPO_LC=${REPO,,}" >>${GITHUB_ENV}
+        env:
+          REPO: '${{ github.event.repository.name }}'
+
       - name: Build and run Dev Container task
         uses: devcontainers/ci@v0.3
         with:
           # Change this to point to your image name
-          imageName: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}
+          imageName: ghcr.io/${{ OWNER_LC }}/${{ REPO_LC }}
