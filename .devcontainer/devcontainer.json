@@ -1,5 +1,3 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	"build": {
 		"dockerfile": "./Dockerfile",
@@ -42,8 +40,7 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"" for git to work,
+	// "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"" for git to work,
 	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
 
 
