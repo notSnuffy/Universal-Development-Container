@@ -10,18 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Set Lower Case Owner Name
-        run: |
-          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
-        env:
-          OWNER: '${{ github.repository_owner }}'
-
-      - name: Set Lower Case Repo Name
-        run: |
-          echo "REPO_LC=${REPO,,}" >>${GITHUB_ENV}
-        env:
-          REPO: '${{ github.event.repository.name }}'
-
       - name: Checkout (GitHub)
         uses: actions/checkout@v3
 
@@ -36,4 +24,4 @@ jobs:
         uses: devcontainers/ci@v0.3
         with:
           # Change this to point to your image name
-          imageName: ghcr.io/${{ OWNER_LC }}/${{ REPO_LC }}
+          imageName: ghcr.io/notSnuffy/universal-development-container
